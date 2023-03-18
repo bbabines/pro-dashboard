@@ -69,7 +69,7 @@ const Sidebar = () => {
 					{/* LOGO AND MENU ICON */}
 					<MenuItem
 						onClick={() => setIsCollapsed(!isCollapsed)}
-						icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
+						icon={isCollapsed ? <MenuOutlinedIcon /> : null}
 						style={{
 							margin: "10px 0 20px 0",
 							color: colors.grey[100],
@@ -119,7 +119,7 @@ const Sidebar = () => {
 						</Box>
 					)}
 
-					<Box paddingLeft={isCollapsed ? undefined : "10%"}>
+					<Box paddingLeft={isCollapsed ? null : "10%"}>
 						<Item
 							title="Dashboard"
 							to="/"
