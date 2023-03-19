@@ -28,8 +28,7 @@ const Team = () => {
 			field: "age",
 			headerName: "Age",
 			type: "number",
-			handleAlign: "left",
-			align: "left",
+			flex: 1,
 		},
 		{
 			field: "phone",
@@ -52,7 +51,7 @@ const Team = () => {
 						m="0 auto"
 						p="5px"
 						display="flex"
-						justifyContent="center"
+						justifyContent="space-around"
 						backgroundColor={
 							access === "admin"
 								? colors.greenAccent[600]
