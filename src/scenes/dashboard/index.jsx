@@ -21,7 +21,7 @@ const Dashboard = () => {
 
 	return (
 		<Box m="20px">
-			{/* HEADER */}
+			{/* Header */}
 			<Box display="flex" justifyContent="space-between" alignItems="center">
 				<Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
 
@@ -41,14 +41,14 @@ const Dashboard = () => {
 				</Box>
 			</Box>
 
-			{/* GRID & CHARTS */}
+			{/* GRID */}
 			<Box
 				display="grid"
 				gridTemplateColumns="repeat(12, 1fr)"
 				gridAutoRows="140px"
 				gap="20px"
 			>
-				{/* ROW 1 */}
+				{/* ROW 1 */} {/* Emails */}
 				<Box
 					gridColumn="span 3"
 					backgroundColor={colors.primary[400]}
@@ -58,7 +58,7 @@ const Dashboard = () => {
 				>
 					<StatBox
 						title="12,361"
-						subtitle="Emails Sent:"
+						subtitle="Emails Sent"
 						progress="0.75"
 						increase="+14%"
 						icon={
@@ -68,6 +68,7 @@ const Dashboard = () => {
 						}
 					/>
 				</Box>
+				{/* Sales */}
 				<Box
 					gridColumn="span 3"
 					backgroundColor={colors.primary[400]}
@@ -77,7 +78,7 @@ const Dashboard = () => {
 				>
 					<StatBox
 						title="431,225"
-						subtitle="Sales Obtained:"
+						subtitle="Sales Obtained"
 						progress="0.50"
 						increase="+21%"
 						icon={
@@ -87,6 +88,7 @@ const Dashboard = () => {
 						}
 					/>
 				</Box>
+				{/* Clients */}
 				<Box
 					gridColumn="span 3"
 					backgroundColor={colors.primary[400]}
@@ -96,7 +98,7 @@ const Dashboard = () => {
 				>
 					<StatBox
 						title="32,441"
-						subtitle="New Clients:"
+						subtitle="New Clients"
 						progress="0.30"
 						increase="+5%"
 						icon={
@@ -106,6 +108,7 @@ const Dashboard = () => {
 						}
 					/>
 				</Box>
+				{/* Traffic */}
 				<Box
 					gridColumn="span 3"
 					backgroundColor={colors.primary[400]}
@@ -115,7 +118,7 @@ const Dashboard = () => {
 				>
 					<StatBox
 						title="1,325,134"
-						subtitle="Traffic Received:"
+						subtitle="Traffic Received"
 						progress="0.80"
 						increase="+43%"
 						icon={
@@ -125,8 +128,7 @@ const Dashboard = () => {
 						}
 					/>
 				</Box>
-
-				{/* ROW 2 */}
+				{/* ROW 2 */} {/* Revenue */}
 				<Box
 					gridColumn="span 8"
 					gridRow="span 2"
@@ -167,6 +169,7 @@ const Dashboard = () => {
 						<LineChart isDashboard={true} />
 					</Box>
 				</Box>
+				{/* Transactions */}
 				<Box
 					gridColumn="span 4"
 					gridRow="span 2"
@@ -217,8 +220,7 @@ const Dashboard = () => {
 						</Box>
 					))}
 				</Box>
-
-				{/* ROW 3 */}
+				{/* ROW 3 */} {/* Campaign */}
 				<Box
 					gridColumn="span 4"
 					gridRow="span 2"
@@ -245,6 +247,7 @@ const Dashboard = () => {
 						<Typography>Includes extra misc expenditures and costs</Typography>
 					</Box>
 				</Box>
+				{/* Sales */}
 				<Box
 					gridColumn="span 4"
 					gridRow="span 2"
@@ -261,6 +264,7 @@ const Dashboard = () => {
 						<BarChart isDashboard={true} />
 					</Box>
 				</Box>
+				{/* Geography */}
 				<Box
 					gridColumn="span 4"
 					gridRow="span 2"
@@ -278,6 +282,7 @@ const Dashboard = () => {
 						<GeographyChart isDashboard={true} />
 					</Box>
 				</Box>
+				{/* End Geography Box */}
 			</Box>
 		</Box>
 	);
