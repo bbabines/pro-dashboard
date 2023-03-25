@@ -44,13 +44,20 @@ I wanted to upgrade my portfolio (yet again) utilizing Three.js/React Three Fibe
 
 ### Built With
 
--[React]
+-React
+<br />
 -React Router
+<br />
 -Material UI
+<br />
 -Formik
+<br />
 -Full Calendar
+<br />
 -Nivo
+<br />
 -Yup
+<br />
 -Vite
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
