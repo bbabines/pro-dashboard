@@ -44,7 +44,7 @@ I wanted to upgrade my portfolio (yet again) utilizing Three.js/React Three Fibe
 
 ### Built With
 
--React
+-[React]
 -React Router
 -Material UI
 -Formik
@@ -80,9 +80,9 @@ To get a local copy up and running follow these simple example steps.
    ```
 3. Run a local copy
 
-```sh
-  npm run start
-```
+   ```sh
+   npm run start
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
