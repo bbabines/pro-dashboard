@@ -25,7 +25,13 @@ const Dashboard = () => {
 			<Box display="flex" justifyContent="space-between" alignItems="center">
 				<Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
 
-				<Box>
+				<Box
+					sx={{
+						width: {
+							xs: "150px",
+						},
+					}}
+				>
 					<Button
 						sx={{
 							backgroundColor: colors.blueAccent[700],
@@ -45,13 +51,13 @@ const Dashboard = () => {
 			<Box
 				mt="15px"
 				display="grid"
-				gridTemplateColumns="repeat(12, 1fr)"
+				gridTemplateColumns={{ xs: "1fr", md: "repeat(12, 1fr)" }}
 				gridAutoRows="140px"
 				gap="20px"
 			>
 				{/* ROW 1 */} {/* Emails */}
 				<Box
-					gridColumn="span 3"
+					gridColumn={{ xs: "span 8", md: "span 3" }}
 					backgroundColor={colors.primary[400]}
 					display="flex"
 					alignItems="center"
@@ -71,7 +77,7 @@ const Dashboard = () => {
 				</Box>
 				{/* Sales */}
 				<Box
-					gridColumn="span 3"
+					gridColumn={{ xs: "span 8", md: "span 3" }}
 					backgroundColor={colors.primary[400]}
 					display="flex"
 					alignItems="center"
@@ -91,7 +97,7 @@ const Dashboard = () => {
 				</Box>
 				{/* Clients */}
 				<Box
-					gridColumn="span 3"
+					gridColumn={{ xs: "span 8", md: "span 3" }}
 					backgroundColor={colors.primary[400]}
 					display="flex"
 					alignItems="center"
@@ -111,7 +117,7 @@ const Dashboard = () => {
 				</Box>
 				{/* Traffic */}
 				<Box
-					gridColumn="span 3"
+					gridColumn={{ xs: "span 8", md: "span 3" }}
 					backgroundColor={colors.primary[400]}
 					display="flex"
 					alignItems="center"
@@ -131,7 +137,7 @@ const Dashboard = () => {
 				</Box>
 				{/* ROW 2 */} {/* Revenue */}
 				<Box
-					gridColumn="span 8"
+					gridColumn={{ xs: "span 8", md: "span 8" }}
 					gridRow="span 2"
 					backgroundColor={colors.primary[400]}
 				>
@@ -172,7 +178,7 @@ const Dashboard = () => {
 				</Box>
 				{/* Transactions */}
 				<Box
-					gridColumn="span 4"
+					gridColumn={{ xs: "span 8", md: "span 4" }}
 					gridRow="span 2"
 					backgroundColor={colors.primary[400]}
 					overflow="auto"
@@ -223,7 +229,7 @@ const Dashboard = () => {
 				</Box>
 				{/* ROW 3 */} {/* Campaign */}
 				<Box
-					gridColumn="span 4"
+					gridColumn={{ xs: "span 8", md: "span 4" }}
 					gridRow="span 2"
 					backgroundColor={colors.primary[400]}
 					p="30px"
@@ -250,7 +256,7 @@ const Dashboard = () => {
 				</Box>
 				{/* Sales */}
 				<Box
-					gridColumn="span 4"
+					gridColumn={{ xs: "span 8", md: "span 4" }}
 					gridRow="span 2"
 					backgroundColor={colors.primary[400]}
 				>
@@ -267,10 +273,11 @@ const Dashboard = () => {
 				</Box>
 				{/* Geography */}
 				<Box
-					gridColumn="span 4"
+					gridColumn={{ xs: "span 8", md: "span 4" }}
 					gridRow="span 2"
 					backgroundColor={colors.primary[400]}
 					padding="30px"
+					marginBottom="30px"
 				>
 					<Typography
 						variant="h5"
