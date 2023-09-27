@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 
 import { tokens } from "../../theme";
@@ -9,16 +9,18 @@ import Header from "../../scenes/component/Header";
 const Contacts = () => {
 	const theme = useTheme();
 	const colors = tokens(theme.palette.mode);
+	const isXsOrSm = useMediaQuery(theme.breakpoints.down("sm"));
 
 	const columns = [
 		{
 			field: "id",
 			headerName: "ID",
-			flex: 0.5,
+			width: isXsOrSm ? 10 : 50,
 		},
 		{
 			field: "registrarId",
 			headerName: "Registrar ID",
+			width: isXsOrSm ? 10 : 70,
 		},
 		{
 			field: "name",
@@ -34,6 +36,7 @@ const Contacts = () => {
 			field: "phone",
 			headerName: "Phone Number",
 			flex: 1,
+			width: isXsOrSm ? 10 : 70,
 		},
 		{
 			field: "email",
@@ -58,14 +61,22 @@ const Contacts = () => {
 	];
 
 	return (
-		<Box m="20px">
+		<Box
+			sx={{
+				m: {
+					xs: "10px",
+					md: "20px",
+				},
+			}}
+		>
 			<Header
 				title="CONTACTS"
 				subtitle="List of Contacts for Future Reference"
 			/>
 			<Box
-				m="40px 0 0 0"
+				m={{ xs: "0px", md: "20px" }}
 				height="75vh"
+				width={{ xs: "80vw", md: "90vw" }}
 				sx={{
 					"& .MuiDataGrid-root": {
 						border: "none",

@@ -8,6 +8,7 @@ import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import { tokens } from "../../theme";
 import { mockDataTeam } from "../../data/mockData";
 import Header from "../../scenes/component/Header";
+import { TrendingUp } from "@mui/icons-material";
 
 const Team = () => {
 	const theme = useTheme();
@@ -17,6 +18,7 @@ const Team = () => {
 		{
 			field: "id",
 			headerName: "ID",
+			width: 10,
 		},
 		{
 			field: "name",
@@ -28,12 +30,13 @@ const Team = () => {
 			field: "age",
 			headerName: "Age",
 			type: "number",
-			flex: 1,
+			width: 10,
 		},
 		{
 			field: "phone",
 			headerName: "Phone Number",
 			flex: 1,
+			hide: true,
 		},
 		{
 			field: "email",
@@ -70,11 +73,19 @@ const Team = () => {
 	];
 
 	return (
-		<Box m="20px">
+		<Box
+			sx={{
+				m: {
+					xs: "10px",
+					md: "20px",
+				},
+			}}
+		>
 			<Header title="TEAM" subtitle="Managing the Team Members" />
 			<Box
-				m="40px 0 0 0"
+				m={{ xs: "0px", md: "20px" }}
 				height="75vh"
+				width={{ xs: "80vw", md: "90vw" }}
 				sx={{
 					"& .MuiDataGrid-root": {
 						border: "none",
@@ -101,7 +112,16 @@ const Team = () => {
 					},
 				}}
 			>
-				<DataGrid checkboxSelection rows={mockDataTeam} columns={columns} />
+				<DataGrid
+					checkboxSelection
+					rows={mockDataTeam}
+					columns={columns}
+					sx={{
+						"& .MuiDataGrid-windowContainer": {
+							overflowX: "hidden",
+						},
+					}}
+				/>
 			</Box>
 		</Box>
 	);

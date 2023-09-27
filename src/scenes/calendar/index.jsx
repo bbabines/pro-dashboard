@@ -13,6 +13,7 @@ import {
 	ListItemText,
 	Typography,
 	useTheme,
+	useMediaQuery,
 } from "@mui/material";
 
 import { tokens } from "../../theme";
@@ -21,6 +22,8 @@ import Header from "../component/Header";
 const Calendar = () => {
 	const theme = useTheme();
 	const colors = tokens(theme.palette.mode);
+	const isXs = useMediaQuery(theme.breakpoints.down("xs"));
+	const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
 	const [currentEvents, setCurrentEvents] = useState([]);
 
 	const handleDateClick = (selected) => {
@@ -50,44 +53,53 @@ const Calendar = () => {
 	};
 
 	return (
-		<Box m="20px">
+		<Box
+			sx={{
+				m: {
+					xs: "10px",
+					md: "20px",
+				},
+			}}
+		>
 			<Header title={"CALENDAR"} subtitle="Full Calendar Interactive Page" />
 			<Box display="flex" justifyContent="space-between">
 				{/* Calendar Sidebar */}
-				<Box
-					flex="1 1 20%"
-					backgroundColor={colors.primary[400]}
-					p="15px"
-					borderRadius="4px"
-					mt="15px"
-				>
-					<Typography variant="h5">Events</Typography>
-					<List>
-						{currentEvents.map((event) => (
-							<ListItem
-								key={event.id}
-								sx={{
-									backgroundColor: colors.greenAccent[500],
-									margin: "10px 0",
-									borderRadius: "2px",
-								}}
-							>
-								<ListItemText
-									primary={event.title}
-									secondary={
-										<Typography>
-											{formatDate(event.start, {
-												year: "numeric",
-												month: "short",
-												day: "numeric",
-											})}
-										</Typography>
-									}
-								/>
-							</ListItem>
-						))}
-					</List>
-				</Box>
+				{isMdUp && (
+					<Box
+						flex="1 1 20%"
+						backgroundColor={colors.primary[400]}
+						p="15px"
+						borderRadius="4px"
+						mt="15px"
+					>
+						<Typography variant="h5">Events</Typography>
+						<List>
+							{currentEvents.map((event) => (
+								<ListItem
+									key={event.id}
+									sx={{
+										backgroundColor: colors.greenAccent[500],
+										margin: "10px 0",
+										borderRadius: "2px",
+									}}
+								>
+									<ListItemText
+										primary={event.title}
+										secondary={
+											<Typography>
+												{formatDate(event.start, {
+													year: "numeric",
+													month: "short",
+													day: "numeric",
+												})}
+											</Typography>
+										}
+									/>
+								</ListItem>
+							))}
+						</List>
+					</Box>
+				)}
 
 				{/* Calendar */}
 				<Box flex="1 1 100%" ml="15px">

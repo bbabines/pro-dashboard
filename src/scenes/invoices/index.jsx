@@ -48,11 +48,19 @@ const Invoices = () => {
 	];
 
 	return (
-		<Box m="20px">
+		<Box
+			sx={{
+				m: {
+					xs: "10px",
+					md: "20px",
+				},
+			}}
+		>
 			<Header title="INVOICES" subtitle="List of Invoice Balances" />
 			<Box
-				m="40px 0 0 0"
+				m={{ xs: "0px", md: "20px" }}
 				height="75vh"
+				width={{ xs: "80vw", md: "90vw" }}
 				sx={{
 					"& .MuiDataGrid-root": {
 						border: "none",
